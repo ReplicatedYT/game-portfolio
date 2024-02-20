@@ -1,0 +1,108 @@
+/* Page title */
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.title {
+  color:aliceblue;
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+}
+
+/* Clickable homepage images */
+
+/* Flex Container */
+.game-image-container {
+  display: flex; /* Make it a flex container */
+  justify-content: space-evenly; /* Align items along the main axis */
+  align-items: center; /* Align items along the cross axis */
+  margin-left: 210px;
+  margin-top: 60px;
+}
+
+.game-image {
+  width: 50%;
+  border-color: whitesmoke;
+  border-style: solid;
+  border-width: 0.1px;
+}
+
+.game-image:hover {
+  border-color: rgb(0, 225, 255);
+}
+
+/* Game titles */
+
+.game-title-container {
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  padding-bottom: 100px;
+  padding-left: 110px;
+  padding-right: 100px;
+  margin-top: 30px;
+}
+
+.game-title {
+  color:aliceblue;
+  font-family: "Arial", sans-serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+/* Background image */
+
+.background-container {
+  position: relative;
+}
+
+.background-image {
+  /*background-image: url('images/tgs-full.png');*/
+  background-color: rgb(5, 5, 5);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /*filter: blur(5px);*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Move the background behind other elements */
+}
+
+/* Clickable social media images */
+
+.social-media-image-container {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  padding-left: 200px;
+  padding-right: 200px;
+  gap: 50px;
+}
+
+.discord-icon {
+  width: 2.5%;
+}
+
+.discord-icon:hover {
+  color: rgb(0, 225, 255);
+}
+
+.twitter-icon {
+  width: 2.5%;
+}
+
+.twitter-icon:hover {
+  color: rgb(0, 225, 255);
+}
+
+.linkedin-icon {
+  width: 3%;
+}

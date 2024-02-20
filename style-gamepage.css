@@ -1,0 +1,116 @@
+header {
+  display: flex;
+  justify-content: right;
+  align-items:right;
+  background-color: rgb(5, 5, 5);
+  color:aliceblue;
+  padding: 20px;
+  text-align: left;
+  margin-top: auto; /* Push the footer to the bottom */
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
+}
+
+.home-button {
+  margin-right: auto;
+}
+
+.content {
+  flex: 1; /* Allow the content to grow to fill remaining space */
+}
+
+.title-text {
+  font-family: "Arial", sans-serif;
+  font-size: 30px;
+}
+
+button {
+  font-family: "Arial", sans-serif;
+  color: aliceblue;
+  border:0px;
+  background-color:transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  color: rgb(0, 225, 255);
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 450px;
+  padding-bottom: 25px;
+}
+
+.link-container {
+  display: flex;
+  justify-content:right;
+  align-items: center;
+  gap: 20px;
+  padding-right: 375px;
+}
+
+.link-text {
+  font-family: "Arial", sans-serif;
+  color: rgb(5, 5, 5);
+  font-style: italic;
+}
+
+.youtube-icon {
+  width: 2.5%;
+}
+
+.steam-icon {
+  width: 2.5%;
+}
+
+.cover-image {
+  width: 30%;
+  padding-top: 200px;
+}
+
+.row-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-bottom: 100px;
+}
+
+.row-paragraph {
+  width: 500px;
+  height: 200px;
+  font-family: "Arial", sans-serif;
+  margin-top: 125px;
+}
+
+.conclusion-image {
+  width: 80%;
+  padding-top: 200px;
+}
+
+.conclusion-paragraph {
+  width: 1000px;
+  height: 200px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  font-family: "Arial", sans-serif;
+}
+
+footer {
+  color:aliceblue;
+  background-color: rgb(5, 5, 5);
+  padding: 20px;
+  text-align: left;
+  margin-top: auto; /* Push the footer to the bottom */
+  font-family: "Arial", sans-serif;
+}
+

@@ -1,0 +1,123 @@
+<!-- 
+  Basic structure of a game page:
+  Title on the left, then cover image on the right
+  Paragraph on the left and image on the right
+  repeat
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style-gamepage.css">
+    <title>Loch Ness Page</title>
+
+    <script>
+      function redirectToPage(InputString) {
+        window.location.href = InputString;
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <button class="home-button" onclick="redirectToPage('home-page.html')">HOME</button>
+      <button onclick="redirectToPage('lochness-page.html')">LOCH NESS</button>
+      <button onclick="redirectToPage('soulmaze-page.html')">SOUL MAZE</button>
+      <button onclick="redirectToPage('primitive-dodge-page.html')">PRIMTIVE DODGE</button>
+      <button onclick="redirectToPage('the-great-smog-page.html')">THE GREAT SMOG</button>
+    </header>
+
+    <div class="content">
+      <div class="top-container">
+        <text class="title-text">
+          Loch Ness
+        </text>
+  
+        <image src="images/lochness2.jpg" class="cover-image"></image>
+      </div>
+
+      <div class="link-container">
+        <text class="link-text">LINKS: </text>
+        <input type="image" src="images/youtube.png" name="youtube-icon" class="youtube-icon" id="youtube-icon" onclick="redirectToPage('https://youtu.be/o_hNHpHPKPU')">
+        <input type="image" src="images/steam.png" name="steam-icon" class="steam-icon" id="steam-icon" onclick="redirectToPage('https://store.steampowered.com/app/1780840/Loch_Ness/')">
+      </div>
+  
+      <div class="row-container">
+        <image src="images/lochnessevent.png" class="cover-image"></image>
+  
+        <p class="row-paragraph">Event System:<br>
+  
+          The event system was created to slowly build up tension with dynamically spawning scares. An example of a low level event is the log, which spawns a floating log with a pointing up branch that could be mistaken as Nessie.<br><br>
+  
+          A challenge with the event system was what Unreal class was perfect for the job, considering it had to replicate the events to all players in this co-op game. After some trial and error I came to the conclusion a component on the boat fit the bill, as it was a pawn controlled by the player it allowed server RPCs from the client. We only wanted the events to fire whilst the player was on the water so the boat being the center of event spawning, not only made sure it replicated but made sense from a design perspective.<br><br>
+  
+          It was fun getting creative. A personal favourite event is the peaking nessie event where the nessie would stick her head out of the water by the player's boat, stare at them for a duration and if spotted would submerge back into the water playing an eerie sound.<br><br>
+  
+          Through developing the event system I learned the difficulties of utilizing randomness in game development and the importance of the hierachy the Unreal Engine classes (especially when it comes to multiplayer).<br><br>
+        </p>
+      </div>
+  
+      <div class="row-container">
+        <p class="row-paragraph">Replication:<br>
+
+          Any replication in the project, or any bugs (which you can imagine was many) was handled predominately by me. Anytime our designer made a cool new mechanic, say fishing, it was up to me to refactor the code to not only fix any bugs but also for the code to work in multiplayer. This was one of the biggest challenges of Loch Ness, the designer would work soley with singleplayer in mind and I would have to step in to convert it to multiplayer.<br><br>
+          
+          To name some of the biggest challenges with converting singleplayer gameplay into multiplayer gameplay was our pong minigame, our dead by daylight inspired minigames, that if failed could attract nessie, the boat movement on water and the map showing multiple players orientation to name a few.<br><br>
+          
+          This experience not only taught me how to refactor singleplayer code and convert it to multiplayer. But, how to communicate potential issues with design to my team.<br><br>
+          
+        </p>
+  
+        <image src="images/lochness-fishing.jpg" class="cover-image"></image>
+      </div>
+  
+      <div class="row-container">
+        <image src="images/lochness-pong.png" class="cover-image"></image>
+        <p class="row-paragraph">Pong:<br>
+
+          Pong seems like such a simple game, but to replicate this over the network was a nightmare. Widgets in Unreal are client only, this combined with the fact the designer created it with only singleplayer in mind made it a very hard problem to solve. It required a major refactor, and to get it to feel exactly the same as the designer intended was difficult to say the least. Luckily there are ways to replicate data for all connected players in widgets, by each client agreeing on the state of the game through centering the data retrieved on the game through the GameState class in Unreal.<br><br>
+          
+          In retrospect working on Pong in Loch Ness taught me not to be afraid trying new things and research into the software tools you're using goes a long way.<br><br>
+        </p>
+  
+      </div>
+  
+      <div class="row-container">
+        <p class="row-paragraph">AI:<br>
+
+          At the start of each game Nessie spawned randomly at one of the sighting locations which was also random.<br><br>
+          
+          The Nessie would wander the sighting location using steering behaviours, staying within the proximity of the sighting location.<br><br>
+          
+          Nessie would only emerge chasing the player if they triggered her, either from certain events or through the various minigames whilst collecting evidence.<br><br>
+          
+          So to conclude the AI, it used the state pattern to have control over current behaviour and steering behaviour to have natural looking movement.<br><br>
+          
+          Using the state pattern taught me that having too many exit conditions from a state made it incredibly hard to debug and control.<br><br>          
+        </p>
+  
+        <image src="images/lochness-nessie.png" class="cover-image"></image>
+      </div>
+  
+      <div class="row-container">
+        <image src="images/eel-lochness.jpg" class="conclusion-image"></image>
+      </div>
+  
+      <div class="row-container">
+        <p class="conclusion-paragraph">Conclusion:<br>
+
+          Loch Ness was our Tranzfuser project, it was our first major project as a team. For our first game it did well at over 3000 units sold and over 5000 wishlists. It fell short because of some issues with bugs and performance over the course of the game. Ultimately, we ran out of funding for the game and had to move on because of of another opportunity (Dun Dev).<br><br>
+          
+          It taught us how to work better as a team, as well as, what to avoid in development like excessive use of physics and randomness in multiplayer.<br><br>
+          
+          Personally I learned a bunch about Unreal, structuring code, multiplayer, optimization, AI, testing and game development as a whole, whilst working in a small team.<br><br>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      Email: Simeonnorris99@outlook.com
+    </footer>
+
+  </body>
+</html>

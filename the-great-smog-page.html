@@ -1,0 +1,106 @@
+<!-- 
+  Basic structure of a game page:
+  Title on the left, then cover image on the right
+  Paragraph on the left and image on the right
+  repeat
+ -->
+
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <link rel="stylesheet" href="style-gamepage.css">
+     <title>The Great Smog Page</title>
+
+     <script>
+      function redirectToPage(InputString) {
+        window.location.href = InputString;
+      }
+    </script>
+   </head>
+ 
+   <body>
+     <header>
+      <button class="home-button" onclick="redirectToPage('home-page.html')">HOME</button>
+      <button onclick="redirectToPage('lochness-page.html')">LOCH NESS</button>
+      <button onclick="redirectToPage('soulmaze-page.html')">SOUL MAZE</button>
+      <button onclick="redirectToPage('primitive-dodge-page.html')">PRIMTIVE DODGE</button>
+      <button onclick="redirectToPage('the-great-smog-page.html')">THE GREAT SMOG</button>
+     </header>
+ 
+     <div class="content">
+       <div class="top-container">
+         <text class="title-text">
+           The Great Smog
+         </text>
+   
+         <image src="images/the-great-smog.png" class="cover-image"></image>
+       </div>
+ 
+       <div class="link-container">
+         <text class="link-text">LINKS: </text>
+         <input type="image" src="images/youtube.png" name="youtube-icon" class="youtube-icon" id="youtube-icon" onclick="redirectToPage('https://youtu.be/BAWTpdaHawI')">
+         <input type="image" src="images/steam.png" name="steam-icon" class="steam-icon" id="steam-icon" onclick="redirectToPage('https://store.steampowered.com/app/2315100/The_Great_Smog/')">
+       </div>
+   
+       <div class="row-container">
+         <image src="images/the-great-smog-undead.png" class="cover-image"></image>
+   
+         <p class="row-paragraph">AI:<br>
+
+          In TGS the AI at the current moment is a mixture of Resident Evil and Phasmophobia. They stagger when hit, much like in resident evil, but will try walk up to you, grab you and kill you. I say like phasmophobia due to the fact the main mutants will kill you when they get close to you, playing execution animations before the player spectates their friends. The AI is using a custom built state machine utilizing actor components as state classes and a brain component holding relevant data like the AI's current target.<br><br>
+          
+          In previous iterations of the AI, the behaviour tree unreal tool was used. However, the behaviour tree tool always seemed very hard to extend and debug for our AI's needs. I as the programmer find it very easy to create AI using states, especially because the AI only really needs to do one thing at a time. The state pattern is also very easy to debug, you know where the problem area is straight away because of what state the AI is in.<br><br>
+          
+          The AI has all the basic states like patrol/ wander, chase, investigate/ search, but has some unique states for different situations like stunned, stalk and hide. On one of our maps the AI cannot reach the player by walking, so we introduced mounds like the vents in the hit Alien game, for the AI to be able to travel along. This creates tense gameplay as you hear the AI tunneling towards your position.<br><br>
+          
+         </p>
+       </div>
+   
+       <div class="row-container">
+         <p class="row-paragraph">Networking:<br>
+
+          With Loch Ness in our past as a team, we set so on focusing a lot more on performance with The Great Smog from the get-go. A large part of this when networking is using as few network RPCs as possible, utilizing network dormancy so that untouched actors don't replicate, focusing on predominantly authoritative calls and data replication instead of RPCs.<br><br>
+          
+          I have become very acquainted with Unreal's tools to create a smooth Unreal Network experience, such as, network emulation to simulate network lag, force net update to make sure the following code is forced to be called on the network, reliability to ensure a function is not dropped, rep notify to replicate the state of an object to late joining players and the network profiler to see the critical offenders.<br><br>
+         </p>
+   
+         <image src="images/the-great-smog-networking.png" class="cover-image"></image>
+       </div>
+   
+       <div class="row-container">
+         <image src="images/the-great-smog-lockminigame.png" class="cover-image"></image>
+
+         <p class="row-paragraph">Lock minigame:<br>
+
+          This minigame I designed from scratch. Sketching out the design, how it would function and the win/ lose conditions.<br><br>
+          
+          With recently playing Outlast Trials, I was inspired to create a 3D puzzle that other players could observe you playing, I thought that was really cool.<br><br>
+          
+          In a meeting with the team I communicated the art requirements and it was very satisfying when it all came together. We have the lights that light up green as you connect a cog, a vent for steam to release when you win, smaller cogs spinning in the background so a variety of different shaped cogs for future expansion of the minigame.<br><br>
+          
+          I learned what you can make in a team can be incredibly rewarding, if communcation of the goal is clear.<br><br>          
+         </p>
+       </div>
+   
+       <div class="row-container">
+         <image src="images/the-great-smog.png" class="conclusion-image"></image>
+       </div>
+   
+       <div class="row-container">
+         <p class="conclusion-paragraph">Conclusion:<br>
+
+          The Great Smog has been a brilliant way to further my skills as a game developer, not only in Unreal but my skills working in a team. I've learned a lot about how to deal with AI, networking, gameplay and optimization. The game took an expirmental approach, trying many things along the way, which meant a lot of scrapping of work and trying again. I've made a door probably about 5 times, redone the AI about 3 and redone many other aspects of the game multiple times.<br><br>
+          
+          This project was started in January 2023 when JFi was invited to attend Dun Dev, and we received funding up until late 2023. Dun Dev was a great opportunity to meet all types of cool people from the games industry. Working on game development fulltime was like a dream, the year went by in a flash.<br><br>
+          
+          The main takeaway from this project for me is don't be afraid to try out something different, but don't be too stubborn to see when something isn't working and revert to the tried and tested when in doubt!<br><br>
+         </p>
+       </div>
+     </div>
+ 
+     <footer>
+       Email: Simeonnorris99@outlook.com
+     </footer>
+ 
+   </body>
+ </html>

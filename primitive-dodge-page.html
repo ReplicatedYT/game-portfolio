@@ -1,0 +1,106 @@
+<!-- 
+  Basic structure of a game page:
+  Title on the left, then cover image on the right
+  Paragraph on the left and image on the right
+  repeat
+ -->
+
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <link rel="stylesheet" href="style-gamepage.css">
+     <title>Primitive Dodge Page</title>
+
+     <script>
+      function redirectToPage(InputString) {
+        window.location.href = InputString;
+      }
+    </script>
+   </head>
+ 
+   <body>
+     <header>
+      <button class="home-button" onclick="redirectToPage('home-page.html')">HOME</button>
+      <button onclick="redirectToPage('lochness-page.html')">LOCH NESS</button>
+      <button onclick="redirectToPage('soulmaze-page.html')">SOUL MAZE</button>
+      <button onclick="redirectToPage('primitive-dodge-page.html')">PRIMTIVE DODGE</button>
+      <button onclick="redirectToPage('the-great-smog-page.html')">THE GREAT SMOG</button>
+     </header>
+ 
+     <div class="content">
+       <div class="top-container">
+         <text class="title-text">
+           Primitive Dodge
+         </text>
+   
+         <image src="images/primitive-dodge-cover.png" class="cover-image"></image>
+       </div>
+ 
+       <div class="link-container">
+         <text class="link-text">LINKS: </text>
+         <input type="image" src="images/youtube.png" name="youtube-icon" class="youtube-icon" id="youtube-icon" onclick="redirectToPage('https://youtu.be/tqZqRIGf1NY')">
+       </div>
+   
+       <div class="row-container">
+         <image src="images/primitive-dodge-sketch.png" class="cover-image"></image>
+   
+         <p class="row-paragraph">Overview:<br>
+
+          The main goal of the game is to match the oncoming obstacle colour by tapping the screen, it featured a progressive procedural difficulty, as you play you gain points and unlock cosmetics.<br><br>
+          
+          Primitive Dodge was available on the Play Store for a period of time, it has recently been removed because they changed their guidelines and because i've been busy with my most recent project I didn't get round to updating the required information.<br><br>
+          
+          The game was developed in my final year of university for my mobile game module.<br><br>
+         </p>
+       </div>
+   
+       <div class="row-container">
+         <p class="row-paragraph">Skill Meter:<br>
+
+          With gems collected a skill meter visually increases on the side of the screen. Upon filling the skill meter, as a bonus the player vacuums all points no matter what colour form they are, in each lane and have an invulnerability to obstacles for a short amount of time upon filling this skill meter.<br><br>
+           
+         </p>
+   
+         <image src="images/primitive-dodge-skillmeter.png" class="cover-image"></image>
+       </div>
+   
+       <div class="row-container">
+         <image src="images/primitive-dodge2.jpg" class="cover-image"></image>
+
+         <p class="row-paragraph">Obstacles:<br>
+
+          The obstacles are the main source of challenge in Primitive Dodge. The order of which they spawn is predetermined before the first level of the game. Each obstacle is represented by a unique character and the order of those characters determined the order they would spawn in-game.<br><br>
+          
+          The biggest challenge was creating randomness but not so much randomness that it would be boring or easier than the previous level. So in the algorithm it felt good enough to force character patterns rules, like if 'A' spawned then A couldn't spawn again next for example. Then finally, making sure that each level spawned x amount more than the previous level.<br><br>
+          
+         </p>
+       </div>
+   
+       <div class="row-container">
+         <p class="row-paragraph">Unlockable Cosmetics:<br>
+
+          As the player plays they pick up gems the same way they would with normal points but, these gems persist and can be traded for hats they can wear. I decided to implement this as a way for player expression, hat collecting seems to be very sucessful in mobile casual games, like in the game Crossy Road.<br><br>
+          
+          The hardest aspect of this feature was how to register the selected hat as the current hat the player was wearing and the individual transforms of the hats on the player. I decided it would be easier to save and store this information using I/O documents.<br><br>
+          
+         </p>
+   
+         <image src="images/primitive-dodge-cosmetic.png" class="cover-image"></image>
+       </div>
+   
+       <div class="row-container">
+         <p class="conclusion-paragraph">Conclusion:<br>
+
+          To conclude, Primitive Dodge is a super casual vertical endless running game, which aims to have enough complexity to keep the player learning but still not so complicated that it is hard to comprehend. Keeping to the traditional three lanes, whilst spicing it up a bit with colour switching/ matching, with minimal consumerism, the game is designed to fill flaws from the perspective of the player seen in the current most popular android endless runners in the play store charts. This is done through offering fun challenges and rewarding the player with cosmetics for their efforts whilst allowing them to switch off and play the game.<br><br>
+          
+          
+         </p>
+       </div>
+     </div>
+ 
+     <footer>
+       Email: Simeonnorris99@outlook.com
+     </footer>
+ 
+   </body>
+ </html>
